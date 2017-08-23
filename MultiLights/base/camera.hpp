@@ -75,7 +75,7 @@ public:
 		if (direction == RIGHT)
 			this->Position += this->Right * velocity;
 
-		this->Position.y = 0.0;
+		//this->Position.y = 0.0;
 	}
 
 	void ProcessMouseScroll(GLfloat yoffset) {
