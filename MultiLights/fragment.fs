@@ -51,7 +51,7 @@ void main(){
     // 属性
     vec3 norm = normalize(Normal);
     vec3 viewDir = normalize(viewPos - FragPos);
-
+   
     // 第一阶段：定向光照
     vec3 result = CalcDirLight(dirLight, norm, viewDir);
     // 第二阶段：点光源
@@ -68,7 +68,6 @@ void main(){
 vec3 CalcDirLight(DirLight light,vec3 normal, vec3 viewDir)
 {
     vec3 lightdir = normalize(-light.direction);
-    vec3 norm = normalize(normal);
     float diff =max(dot(normal,lightdir),0.0);
     vec3 reflectdir = reflect(-lightdir,normal);
     float spec = pow(max(dot(viewDir,reflectdir),0.0),material.shininess);
